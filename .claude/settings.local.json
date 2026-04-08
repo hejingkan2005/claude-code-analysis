@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(claude:*)",
+      "Bash(head:*)",
+      "Bash(sort:*)",
+      "Bash(python3:*)",
+      "Bash(python:*)"
+    ]
+  }
+}
