@@ -1,7 +1,10 @@
 title: Design Patterns Documentation
 description: Design patterns documentation published via GitHub Pages
-theme: just-the-docs
+remote_theme: just-the-docs/just-the-docs
 baseurl: "/claude-code-analysis"
+
+plugins:
+  - jekyll-remote-theme
 
 nav_enabled: true
 search_enabled: true
