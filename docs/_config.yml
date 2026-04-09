@@ -1,0 +1,22 @@
+title: Design Patterns Documentation
+description: Design patterns documentation published via GitHub Pages
+theme: just-the-docs
+baseurl: "/claude-code-analysis"
+
+nav_enabled: true
+search_enabled: true
+
+collections:
+  pages:
+    output: true
+
+exclude:
+  - src/
+  - node_modules/
+  - package.json
+  - package-lock.json
+  - vite.config.js
+  - "*.ts"
+  - "*.tsx"
+  - "*.js"
+  - "*.jsx"
