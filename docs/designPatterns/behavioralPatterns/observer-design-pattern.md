@@ -4,7 +4,6 @@ title: Observer / Pub-Sub Pattern
 parent: Behavioral Patterns
 nav_order: 1
 ---
-
 # Observer/Pub-Sub设计模式
 
 - React hooks system (useState listeners)
@@ -15,6 +14,8 @@ nav_order: 1
 ## Observer/Pub-Sub原型
 
 ![observer-design-pattern](../../image/observer-design-pattern.png)
+
+*Image source: [Observer Pattern | Set 1 (Introduction) - GeeksforGeeks](https://www.geeksforgeeks.org/system-design/observer-pattern-set-1-introduction/)*
 
 ## Signal使用场景
 

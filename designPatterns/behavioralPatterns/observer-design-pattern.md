@@ -8,6 +8,8 @@
 
 ![observer-design-pattern](../image/observer-design-pattern.png)
 
+*Image source: [Observer Pattern | Set 1 (Introduction) - GeeksforGeeks](https://www.geeksforgeeks.org/system-design/observer-pattern-set-1-introduction/)*
+
 ## Signal使用场景
 
 与存储模式(AppState, createStore)不同，订阅者只需要知道“某件事发生了”，而不需要知道“当前状态值是什么”。
