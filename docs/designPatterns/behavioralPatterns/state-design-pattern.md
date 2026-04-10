@@ -6,11 +6,10 @@ nav_order: 1
 ---
 # State设计模式
 
-- queryGuard.ts
-- Complex state machine in REPL.tsx (4745 lines)
 - Screen states: "prompt" vs "transcript"
-- Tool execution states: pending → streaming → complete
-- Permission states: ask → allow → deny
+- QueryGuard
+- [Todo] Tool execution states: pending → streaming → complete 
+- [Todo] Permission states: ask → allow → deny
 
 ## State原型
 
