@@ -14,7 +14,7 @@ nav_order: 1
 
 ![observer-design-pattern](../image/observer-design-pattern.png)
 
-*Image source: [Observer Pattern | Set 1 (Introduction) - GeeksforGeeks](https://www.geeksforgeeks.org/system-design/observer-pattern-set-1-introduction/)*
+*Image source: [Observer Pattern - GeeksforGeeks](https://www.geeksforgeeks.org/system-design/observer-pattern-set-1-introduction/)*
 
 ## Signal使用场景
 
