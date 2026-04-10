@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Observer / Pub-Sub Pattern
+title: State Pattern
 parent: Behavioral Patterns
 nav_order: 1
 ---
@@ -8,7 +8,7 @@ nav_order: 1
 
 - Screen states: "prompt" vs "transcript"
 - QueryGuard
-- [Todo] Tool execution states: pending → streaming → complete 
+- [Todo] Tool execution states: pending → streaming → complete
 - [Todo] Permission states: ask → allow → deny
 
 ## State原型
@@ -44,7 +44,7 @@ setFrozenTranscriptState({
 
 再来看一个稍微复杂一点的情况，`QueryGuard`类定义了一个同步状态机，包含三种状态: `idle, dispatching, running`, 以及对应的转换方法:`reserve, tryStart, for direct user submissions, end/forceEnd, cancleReservation`:
 
-![state-machine](../image/queryguard-state-machine.png)
+![queryGuard-state-machine](../image/queryGuard-state-machine.png)
 
 这是一个经典的有限状态机，比 `Screen state`的切换更接近 `State`模式的精神，但没有将每个状态封装为独立的类，仍然不是GoF的经典实现。
 
