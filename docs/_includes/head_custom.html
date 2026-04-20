@@ -1,34 +1,13 @@
 <style>
-/* Custom styles for responsive tables and full-width layout */
+/* Custom styles for responsive tables */
 
-/* Override the main container to use full width */
-.page-wrap {
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-.main-header {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
-
-/* Make the main content area use full available width */
-.main-content {
-  max-width: 100% !important;
-  width: 100% !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  padding: 1.5rem 1.5rem !important;
-  box-sizing: border-box;
-}
-
-/* Make tables take full width */
+/* Make tables scrollable on smaller screens */
 table {
   display: block;
   overflow-x: auto;
   border-collapse: collapse;
   width: 100%;
-  table-layout: auto;
+  margin: 1rem 0;
 }
 
 table thead {
@@ -55,12 +34,8 @@ table td, table th {
   font-size: 0.95rem;
 }
 
-/* Responsive adjustments */
+/* Responsive adjustments for better readability */
 @media (max-width: 1200px) {
-  .main-content {
-    padding: 1rem 1rem !important;
-  }
-  
   table td, table th {
     padding: 0.6rem;
     font-size: 0.9rem;
@@ -68,16 +43,9 @@ table td, table th {
 }
 
 @media (max-width: 768px) {
-  .main-content {
-    padding: 0.75rem !important;
-  }
-  
-  .side-bar {
-    display: none;
-  }
-  
   table td, table th {
     padding: 0.5rem;
     font-size: 0.85rem;
   }
-}</style>
+}
+</style>
