@@ -1,0 +1,74 @@
+<style>
+/* Custom styles for responsive tables and layout */
+
+.main-content {
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Make tables scrollable on smaller screens */
+table {
+  display: block;
+  overflow-x: auto;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table thead {
+  display: table;
+  width: 100%;
+  background-color: #f6f8fa;
+}
+
+table tbody {
+  display: block;
+  overflow-y: auto;
+}
+
+table tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+table td, table th {
+  word-wrap: break-word;
+  white-space: normal;
+  padding: 0.75rem;
+  font-size: 0.95rem;
+}
+
+/* Reduce left/right margins */
+.page-wrap {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.main-header {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.main-content {
+  padding: 2rem 2rem;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    max-width: 100%;
+    padding: 1rem 0.5rem;
+  }
+  
+  table td, table th {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Ensure the table columns are visible */
+table th:last-child,
+table td:last-child {
+  width: auto;
+}
+</style>

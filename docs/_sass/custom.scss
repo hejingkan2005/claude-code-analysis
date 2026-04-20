@@ -1,0 +1,68 @@
+// Custom styles for better table responsiveness and layout
+// Override just-the-docs theme defaults
+
+// Make the main content area wider and reduce margins
+.main-content {
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+  
+  @media (max-width: 768px) {
+    max-width: 95%;
+    padding: 0.5rem;
+  }
+}
+
+// Make tables scrollable on smaller screens
+table {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+  border-collapse: collapse;
+  
+  @media (min-width: 769px) {
+    display: table;
+    white-space: normal;
+  }
+}
+
+// Ensure table cells have proper padding and text wrapping on larger screens
+table td, table th {
+  @media (min-width: 769px) {
+    word-wrap: break-word;
+    white-space: normal;
+    max-width: 15vw;
+    padding: 0.75rem;
+  }
+  
+  @media (max-width: 768px) {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
+}
+
+// Reduce excessive margins from just-the-docs
+.page-wrap {
+  margin-left: 0;
+  margin-right: 0;
+  
+  @media (min-width: 997px) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+// Make the sidebar not take excessive space
+.side-bar {
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+// Ensure content is centered and not too wide
+.site-nav {
+  @media (min-width: 997px) {
+    width: 250px;
+  }
+}

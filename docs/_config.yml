@@ -9,6 +9,13 @@ plugins:
 nav_enabled: true
 search_enabled: true
 
+# Custom CSS
+sass:
+  load_paths:
+    - _sass
+
+custom_scss: true
+
 collections:
   pages:
     output: true
