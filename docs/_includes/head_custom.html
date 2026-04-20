@@ -1,18 +1,34 @@
 <style>
-/* Custom styles for responsive tables and layout */
+/* Custom styles for responsive tables and full-width layout */
 
-.main-content {
-  max-width: 90%;
-  margin-left: auto;
-  margin-right: auto;
+/* Override the main container to use full width */
+.page-wrap {
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-/* Make tables scrollable on smaller screens */
+.main-header {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Make the main content area use full available width */
+.main-content {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding: 1.5rem 1.5rem !important;
+  box-sizing: border-box;
+}
+
+/* Make tables take full width */
 table {
   display: block;
   overflow-x: auto;
   border-collapse: collapse;
   width: 100%;
+  table-layout: auto;
 }
 
 table thead {
@@ -29,7 +45,7 @@ table tbody {
 table tr {
   display: table;
   width: 100%;
-  table-layout: fixed;
+  table-layout: auto;
 }
 
 table td, table th {
@@ -39,25 +55,25 @@ table td, table th {
   font-size: 0.95rem;
 }
 
-/* Reduce left/right margins */
-.page-wrap {
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-.main-header {
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.main-content {
-  padding: 2rem 2rem;
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .main-content {
+    padding: 1rem 1rem !important;
+  }
+  
+  table td, table th {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 768px) {
   .main-content {
-    max-width: 100%;
-    padding: 1rem 0.5rem;
+    padding: 0.75rem !important;
+  }
+  
+  .side-bar {
+    display: none;
   }
   
   table td, table th {
@@ -65,10 +81,3 @@ table td, table th {
     font-size: 0.85rem;
   }
 }
-
-/* Ensure the table columns are visible */
-table th:last-child,
-table td:last-child {
-  width: auto;
-}
-</style>
