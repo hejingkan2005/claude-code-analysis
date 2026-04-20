@@ -7,8 +7,6 @@ nav_order: 1
 # Command设计模式
 
 - Commands system in commands
-- Each command encapsulates action (help, settings, install)
-- Command queue in REPL for user actions
 
 ## 使用场景：Slash Commands System
 
@@ -24,7 +22,7 @@ export type Command = CommandBase &
 
 - LocalCommand - 同步本地命令，如/clear, /compact, /cost
 - LocalJSXCommand -  用户交互的UI命令, 如/model, /config, /permission
-- PromptCommand - 需要AI处理的技能`/SKILLS`
+- PromptCommand - 需要AI处理的技能 `/SKILLS`
 
 完整的调用流程:
 
