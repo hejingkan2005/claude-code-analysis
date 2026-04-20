@@ -8,6 +8,7 @@ table {
   border-collapse: collapse;
   width: 100%;
   margin: 1rem 0;
+  font-size: 0.9rem;
 }
 
 table thead {
@@ -24,28 +25,47 @@ table tbody {
 table tr {
   display: table;
   width: 100%;
-  table-layout: auto;
+  table-layout: fixed;
 }
 
 table td, table th {
   word-wrap: break-word;
   white-space: normal;
   padding: 0.75rem;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  min-width: 150px;
+  vertical-align: top;
+  border: 1px solid #e9ecef;
+}
+
+table th {
+  background-color: #f6f8fa;
+  font-weight: 600;
+  text-align: left;
+}
+
+table td {
+  background-color: #fff;
+}
+
+table tbody tr:nth-child(odd) td {
+  background-color: #f9f9f9;
 }
 
 /* Responsive adjustments for better readability */
 @media (max-width: 1200px) {
   table td, table th {
     padding: 0.6rem;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    min-width: 120px;
   }
 }
 
 @media (max-width: 768px) {
   table td, table th {
     padding: 0.5rem;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+    min-width: 100px;
   }
 }
 </style>
