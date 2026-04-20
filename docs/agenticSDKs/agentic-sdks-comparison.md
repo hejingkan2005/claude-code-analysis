@@ -4,11 +4,12 @@
 
 **Reference:** [Composio - Agent SDKs Comparison](https://composio.dev/content/claude-agents-sdk-vs-openai-agents-sdk-vs-google-adk)
 
+Many agentic SDKs are emerging in 2026. While most handle the fundamentals well: defining agents, connecting tools, running tool‑calling conversations, streaming responses, producing structured outputs, and supporting async execution. They begin to diverge significantly beyond the quick‑start experience. These differences can have a real impact in practice, which is why I put together a comparison of the most widely used frameworks.
+
 ## Comparison Table
 
 | Feature | Claude Agent SDK | OpenAI Agents SDK | Google ADK | GitHub Copilot SDK | Microsoft Agent Framework |
 |--------|------------------|------------------|------------|-------------------|---------------------------|
-| **Product type** | SDK (library) | SDK (library) | SDK (library) | SDK (library) — wraps a locally‑managed Copilot CLI subprocess via JSON‑RPC | SDK (library) — local in‑process + hosted (Azure AI Foundry); successor unifying Semantic Kernel agents + AutoGen |
 | **Primary language support** | Python, TypeScript (first‑class, parity) | Python (primary), TypeScript/JS (separate repo, ~6 minor versions behind) | Python, Java, Go (GA); TypeScript (preview, v0.2) | TypeScript/Node, Python, Go, .NET/C#, Java — all in Public Preview (v0.2.x) | Python (agent‑framework v1.0.x, GA) and .NET (Microsoft.Agents.AI v1.1.x, GA); no first‑party TypeScript or Java SDK |
 | **Model support** | ⚠️ Claude‑only models; Bedrock / Vertex AI / Azure AI Foundry are delivery channels, not alternative model vendors | ✅ OpenAI Responses & Chat Completions APIs; Azure OpenAI (incl. Entra ID via `azure-identity`) and any OpenAI‑compatible endpoint (Ollama, vLLM, local servers) via injected `AsyncOpenAI` / `AsyncAzureOpenAI`; 100+ additional LLMs via LiteLLM / any‑llm extensions | ✅ Gemini‑optimized; 100+ via LiteLLM; native Claude, Gemma, Vertex AI, Apigee | ✅ Copilot‑routed models (GPT‑4.1, GPT‑5, GPT‑5.2‑Codex, Claude Sonnet 4 / 4.5) + BYOK (OpenAI, Azure OpenAI, Azure AI Foundry, Anthropic, Ollama, Microsoft Foundry Local). BYOK uses static API keys only | ✅ Azure OpenAI, OpenAI (Chat + Responses), Microsoft Foundry (any vendor incl. Anthropic), Anthropic direct, Ollama, GitHub Copilot, Copilot Studio; custom via `IChatClient` / `ChatClientProtocol` |
 | **Multi‑agent orchestration** | ✅ Subagents (parallel, flat) | ✅ Handoffs (declarative delegation) | ✅ Workflow Agents (Sequential / Parallel / Loop) + Sub‑agents (GA); Graph workflows in 2.0 Alpha | ✅ Custom agents with intent‑based auto‑selection; sub‑agent lifecycle events; per‑agent tool & MCP scoping. No graph/workflow engine | ✅ Graph‑based workflow engine (typed edges, fan‑out/fan‑in, supersteps); Sequential, Concurrent, Magentic (manager‑coordinated), Handoffs (A2A), Group Chat, Agent‑as‑Tool |
@@ -25,7 +26,7 @@
 ## Multi-agent Orchestration
 
 
-### OpenAI Agents SDK - Handoffs (declarative delegation)
+### Handoffs (OpenAI)
 
 Handoffs allow an agent to delegate tasks to another agent. This is particularly useful in scenarios where different agents specialize in distinct areas. For example, a customer support app might have agents that each specifically handle tasks like order status, refunds, FAQs, etc.
 
@@ -60,7 +61,7 @@ handoff_obj = handoff(
 )
 ```
 
-### Microsoft Agent Framework - A2A 
+### A2A (Microsoft) 
 
 The Agent-to-Agent (A2A) protocol enables standardized communication between agents, allowing agents built with different frameworks and technologies to communicate seamlessly.
 
@@ -337,6 +338,27 @@ async def main() -> None:
 if __name__ == "__main__":
     asyncio.run(main())
 ```
+
+## Guardrails / Safety
+
+### "default" Permission_mode vs. HITL (Human-in-the-loop) Pattern
+
+**"default" permission_mode - Simple Approval:**
+```python
+Agent: "I want to delete file 'data.txt'"
+User: "Yes" or "No"
+→ Action executes or stops
+```
+
+**HITL Pattern - Active Involvement:**
+```python
+Agent: "I want to delete file 'data.txt' to clean up workspace"
+User: "No, don't delete. Instead, archive it in the /backup folder"
+Agent: "Understood. Revised plan: Archive file instead"
+→ Agent re-plans with human guidance
+```
+
+"default" mode = reactive binary approval (yes/no), HITL = active human-agent collaboration where humans can modify agent plans and provide feedback.
 
 ## Which One to Choose?
 
