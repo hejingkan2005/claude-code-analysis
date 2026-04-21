@@ -9,7 +9,6 @@ nav_order: 1
 - Tool execution strategies (parallel vs sequential)
 - Model provider strategies (firstParty, custom, etc.)
 - Permission strategies (interactive dialog, speculative classifier, auto-approve)
-- Rendering strategies (Ink, Terminal output)
 
 ## 使用场景：Tool execution strategies (parallel vs sequential)
 
@@ -110,4 +109,3 @@ export function getAPIProvider(): APIProvider {
 // 只在选中该策略时才动态导入 SDK，减少打包体积和启动时间
 const { AnthropicFoundry } = await import('@anthropic-ai/foundry-sdk')
 ```
-

@@ -6,6 +6,12 @@
 
 Many agentic SDKs are emerging in 2026. While most handle the fundamentals well: defining agents, connecting tools, running tool‑calling conversations, streaming responses, producing structured outputs, and supporting async execution. They begin to diverge significantly beyond the quick‑start experience. These differences can have a real impact in practice, which is why I put together a comparison of the most widely used frameworks.
 
+- Claude Agent SDK
+- OpenAI Agents SDK
+- Google ADK
+- Github Copilot SDK
+- Microsoft Agent Framework
+
 ## Comparison Table
 
 | Feature | Claude Agent SDK | OpenAI Agents SDK | Google ADK | GitHub Copilot SDK | Microsoft Agent Framework |
@@ -359,6 +365,45 @@ Agent: "Understood. Revised plan: Archive file instead"
 ```
 
 "default" mode = reactive binary approval (yes/no), HITL = active human-agent collaboration where humans can modify agent plans and provide feedback.
+
+## OS / System Access
+
+### Sandboxed Code Interpreter via hosted services only (Microsoft Agent Framework)
+
+Microsoft Agent Framework supports sandboxed Code Interpreter execution through hosted services only. There is no native local code execution capability. Code execution is delegated to Azure-hosted or OpenAI-hosted Code Interpreter services.
+
+```py
+import os
+from openai import AzureOpenAI
+from azure.identity import DefaultAzureCredential, get_bearer_token_provider
+
+# Use Microsoft Entra ID (Azure AD) for authentication
+# Requires: az login, or a managed identity / service principal
+token_provider = get_bearer_token_provider(
+    DefaultAzureCredential(),
+    "https://cognitiveservices.azure.com/.default",
+)
+
+client = AzureOpenAI(
+    azure_endpoint="https://discovery-eastus2.openai.azure.com",   # e.g. https://<resource>.openai.azure.com
+    azure_ad_token_provider=token_provider,
+    api_version="2025-04-01-preview",                      # version that supports Responses API + code_interpreter
+)
+
+container = client.containers.create(name="test-container", memory_limit="4g")
+
+response = client.responses.create(
+    model="gpt-4.1-mini",           # your gpt-4.1 deployment name
+    tools=[{
+        "type": "code_interpreter",
+        "container": container.id
+    }],
+    tool_choice="required",
+    input="use the python tool to calculate what is 4 * 3.82. and then find its square root and then find the square root of that result"
+)
+
+print(response.output_text)
+```
 
 ## Which One to Choose?
 

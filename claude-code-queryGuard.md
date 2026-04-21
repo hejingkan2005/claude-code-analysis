@@ -47,7 +47,7 @@ end(gen)
                                 → spinner 消失
 ```
 
-###
+### 代码
 ```
  Usage with React:
     const queryGuard = useRef(new QueryGuard()).current
