@@ -18,7 +18,6 @@ Many agentic SDKs are emerging in 2026. While most handle the fundamentals well:
 
 ![harness-engineering-analogy](image/harness-engineering-analogy.png)
 
-
 **Diagram source:** Adapted from [Harness Engineering for Agents (YouTube)](https://www.youtube.com/watch?v=Xq-s_hAjADw)
 
 ## Harness Engineering Evaluation of Agent SDKs
@@ -519,11 +518,11 @@ Agent: "Understood. Revised plan: Archive file instead"
 
 ## Which One to Choose?
 
-- OpenAI Agents SDK: Choose if you want a lightweight framework with strong voice support and the ability to swap LLMs freely.
-- Claude Agent SDK: Choose if your agents need deep OS access (developer assistants) or follow a "give the agent a computer" paradigm.
-- Google ADK: Choose if you are building enterprise-grade systems on Google Cloud or need multi-language support (Python/Java/Go). Requires a lot of manual plumbing and security.
-- GitHub Copilot SDK: Choose if you want to embed a code-centric agent runtime into your app across many languages (Python/Node/Go/.NET/Java) with GitHub-native auth and BYOK. Still in Public Preview.
-- Microsoft Agent Framework: Choose if you need graph-based multi-agent workflows on Azure AI Foundry, work in a .NET or Python enterprise stack, or are migrating from Semantic Kernel / AutoGen.
+- **OpenAI Agents SDK**: Choose if you want a lightweight framework with strong voice support and the ability to swap LLMs freely.
+- **Claude Agent SDK**: Choose if your agents need deep OS access (developer assistants) or follow a "give the agent a computer" paradigm.
+- **Google ADK**: Choose if you are building enterprise-grade systems on Google Cloud or need multi-language support (Python/Java/Go). Requires a lot of manual plumbing and security.
+- **GitHub Copilot SDK**: Choose if you want to embed a code-centric agent runtime into your app across many languages (Python/Node/Go/.NET/Java) with GitHub-native auth and BYOK. Still in Public Preview.
+- **Microsoft Agent Framework**: Choose if you need graph-based multi-agent workflows on Azure AI Foundry, work in a .NET or Python enterprise stack, or are migrating from Semantic Kernel / AutoGen.
 
 In addition to the agentic SDKs mentioned above, there are several other leading frameworks that are not covered here but are also worth further exploration:
 
