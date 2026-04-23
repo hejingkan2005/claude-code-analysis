@@ -37,6 +37,10 @@ Many agentic SDKs are emerging in 2026. While most handle the fundamentals well:
 | **Evaluation & observability** | ★★ Implicit tool traces in the message stream; no first-party trace dashboard                                       | ★★★★★ Built-in trace dashboard (agent / generation / function / guardrail / handoff spans) and broad ecosystem (AgentOps, Logfire, Langfuse, Phoenix, MLflow, Braintrust, W&B, Datadog, …) | ★★★★★ Built-in OpenTelemetry with GenAI semantic conventions; Azure Monitor / App Insights / Aspire integration                                       | ★★★★ Web Dev UI, Cloud Trace, plus AgentOps / Phoenix / MLflow / W&B Weave                               | ★★★★ Built-in OpenTelemetry with W3C trace-context propagation across SDK and CLI                                                                 |
 | **Constraints & recovery**     | ★★★★ Multiple permission modes, tool allow-lists, sandboxing on macOS/Linux                                       | ★★★★★ Input / output / tool guardrails (with parallel or blocking execution), tripwire exceptions, per-tool approval flow with serializable run-state HITL and replay                       | ★★★★★ Middleware pipeline, tool-approval gates, content safety, HITL — recovery via workflow checkpoints                                             | ★★★★ Callbacks, plugins, tool-confirmation HITL, A2A isolation, model-side safety filters                | ★★★★ Unified per-call permission callback, per-agent allow/deny lists, pre/post hooks                                                             |
 
+## How Harness Engineering Works
+
+![1776925567187](image/agentic-sdks-comparison/1776925567187.png)
+
 ## Multi-agent Orchestration
 
 ### Handoffs (OpenAI Agents SDK)
